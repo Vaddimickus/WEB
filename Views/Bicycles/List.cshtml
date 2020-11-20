@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Bicycle>
+
+<h2>Все велосипеды</h2>
+@{
+    foreach (Bicycle bicycle in Model) {
+        @Html.Partial("AllBicyclies", bicycle)
+    }
+}
+
