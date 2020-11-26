@@ -58,6 +58,7 @@ namespace BicycleShop{
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("categoryFilter", "Bicycles/{action=List}/{category?}");
+                endpoints.MapControllerRoute("categoryFilterAjax", "Bicycles/{action=List2}/{category?}");
             });
         }
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BicycleShop.Data.Interfaces {
     public interface IBicycle {
 
-        IEnumerable<Bicycle> Bicycles { get; /*set;*/ }
+        IEnumerable<Bicycle> Bicycles { get; }
         Bicycle getObjectBicycle(int bicycleID);
 
     }

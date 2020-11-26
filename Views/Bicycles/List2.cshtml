@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Bicycle>
+
+<h2>Все велосипеды</h2>
+<div id="searchresults">
+    @{
+        foreach (Bicycle bicycle in Model) {
+
+
+            <div class="col-lg-4">
+                <img class="img-thumbnail" width="650" height="400" src="@bicycle.img" alt="@bicycle.name" />
+                <h2>Модель: @bicycle.name</h2>
+                <p>Цена: @bicycle.price.ToString("c")</p>
+                <p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@bicycle.id">Добавить в корзину</a></p>
+            </div>
+
+
+        }
+    }
+</div>

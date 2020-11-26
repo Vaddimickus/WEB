@@ -36,5 +36,30 @@ namespace BicycleShop.Controllers {
 
             return View(bicycles);
         }
+
+        [Route("Bicycles/List")]
+        [Route("Bicycles/List/{category}")]
+        [HttpPost]
+        public ActionResult List2(string category) {
+            string _category = category;
+            IEnumerable<Bicycle> bicycles = null;
+            if (string.IsNullOrEmpty(category)) {
+                bicycles = allbicycle.Bicycles.OrderBy(i => i.id);
+            }
+            else {
+                if (string.Equals("mountain", category, StringComparison.OrdinalIgnoreCase)
+                    | string.Equals("Горные велосипеды", category, StringComparison.OrdinalIgnoreCase)) {
+                    bicycles = allbicycle.Bicycles.Where(i => i.Category.categoryName.Equals("Горные велосипеды")).OrderBy(i => i.id);
+                }
+                else if (string.Equals("highway", category, StringComparison.OrdinalIgnoreCase)
+                  | string.Equals("Шоссейные велосипеды", category, StringComparison.OrdinalIgnoreCase)) {
+                    bicycles = allbicycle.Bicycles.Where(i => i.Category.categoryName.Equals("Шоссейные велосипеды")).OrderBy(i => i.id);
+                }
+            }
+
+
+            return PartialView(bicycles);
+        }
+
     }
 }
