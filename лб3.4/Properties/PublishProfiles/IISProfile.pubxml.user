@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARbU31gxWikipvOmFWzzCJQAAAAACAAAAAAAQZgAAAAEAACAAAACgeT/zNs3wMgtSdJuiAccIdDRWV5BlWvaxy4uZj2nNnwAAAAAOgAAAAAIAACAAAACnOye3Hr276CDXbctCvPZ2CDDBoFUkCEmhXloCW3IalhAAAABn2th/MTPSgqc8jZZt4eNPQAAAABl4YufBm/Z1ZvOIv167/tgb/ZzxPuAPts8K60mpPpAz+piUwVjoCNhv7oy+AcndOgQLXYRGFQTYXo1VWbpnQP0=</EncryptedPassword>
+    <_PublishTargetUrl>D:\inetpub\wwwroot\BicycleShop</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=%28localdb%29\mssqllocaldb%3bInitial Catalog=Shop%3bIntegrated Security=True%3bMultipleActiveResultSets=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="BicycleShop.Data.AppDBContent">
+      <Value>Data Source=%28localdb%29\mssqllocaldb%3bInitial Catalog=Shop%3bIntegrated Security=True%3bMultipleActiveResultSets=True</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

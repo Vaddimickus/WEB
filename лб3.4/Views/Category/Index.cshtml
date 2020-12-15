@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Category>
+
+<h2>Категории</h2>
+
+<div class="container">
+    <div class="row">
+        @{ foreach (Category category in Model) {
+                <div class="col-sm">
+                    <h4>@category.categoryName</h4>
+                    <p>@category.desc</p>
+                    <form asp-controller="Bicycles" asp-action="List2" asp-route-category="@category.categoryName" 
+                          data-ajax="true" data-ajax-mode="replace" data-ajax-update="#results" method="get">
+                        <input type="submit" value="Подробнее" />
+                    </form>
+
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<div id="results"></div>
